@@ -1,21 +1,51 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <div id="app" class="container">
+
+    <div class="row">
+      <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card hoverable"  style="border: 2px solid #212121;">
+          <div class="card-content">
+            <p class="card-title center-align">Conecte-se para continuar</p>
+            <br>
+            <div class="row">
+              <form class="col s12">
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix orange-text text-darken-4">account_circle</i>
+                    <input type="email" class="validate" v-model="user_email">
+                    <label for="user_email" data-error="Email inválido" data-success="Email válido">Email</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix orange-text text-darken-4">vpn_key</i>
+                    <input type="password" class="validate" v-model="user_password">
+                    <label for="user_password">Senha</label>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+            <button class="right btn waves-effect waves-light orange darken-4" >Acessar
+          <i class="material-icons right">send</i>
+          </button>
+
+          </div>
+          <div class="card-action">
+            <p class="center-align">Não possui uma conta?</p>
+            <h5 class="center-align orange-text text-darken-4">Cadastre-se agora</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <router-link to="/home">Home</router-link>
+    <router-link to="/dash">Dashboard</router-link>
+
+    <router-view></router-view> -->
   </div>
 </template>
 
@@ -24,37 +54,11 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      user_email: '',
+      user_password: '',
+      projectName: '',
+      projectSubhead: 'Gerenciador de informações para consultores independentes',
     }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>
